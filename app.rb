@@ -8,7 +8,7 @@ get '/' do
 end
 
 get '/secret' do
-  "This is a secret page"
+"Not secret"
 end
 
 get '/home' do
@@ -16,5 +16,7 @@ get '/home' do
 end
 
 get '/cat' do
+  @names = ["Amigo", "Oscar", "Viking"].sample
+  # %w(Amigo Oscar Viking) could use this to refactor
   erb(:index)
 end
