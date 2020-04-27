@@ -15,8 +15,14 @@ get '/home' do
   "This is a home page"
 end
 
-get '/cat' do
+get '/random-cat' do
   @names = ["Amigo", "Oscar", "Viking"].sample
   # %w(Amigo Oscar Viking) could use this to refactor
+  erb(:index)
+end
+
+get '/named-cat' do
+  @names = params[:name]
+  p params
   erb(:index)
 end
