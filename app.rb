@@ -8,11 +8,7 @@ get '/' do
 end
 
 get '/secret' do
-"Not secret"
-end
-
-get '/contact' do
-  "This is a contact page"
+  "Not secret"
 end
 
 get '/random-cat' do
@@ -21,7 +17,11 @@ get '/random-cat' do
   erb(:index)
 end
 
-get '/named-cat' do
+get '/cat-form' do
+  erb(:cat_form)
+end
+
+post '/named-cat' do
   p params
   @name = params[:name]
   @age = params[:age]
