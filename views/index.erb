@@ -1,4 +1,20 @@
-<h1>My name is <%= @names %></h1>
+<% if @name %>
+<h1>My name is <%= @name %> and I am <%= @age %>  </h1>
+<% end %>
+
+<!-- why does it break when this is included in the form? method="post" -->
+<form action="/named-cat">
+  <input type="text" name="name">
+  <input type="text" name="age">
+  <input type="submit" value="Submit">
+</form>
+
+<!-- <form action="/named-cat">
+  <input type="text" name="name">
+  <input type="submit" value="Submit">
+</form>
+-->
+
 <div style='border: 3px dashed red'>
   <img src='http://bit.ly/1eze8aE'>
 </div>

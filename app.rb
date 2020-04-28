@@ -11,18 +11,19 @@ get '/secret' do
 "Not secret"
 end
 
-get '/home' do
-  "This is a home page"
+get '/contact' do
+  "This is a contact page"
 end
 
 get '/random-cat' do
-  @names = ["Amigo", "Oscar", "Viking"].sample
+  @name = ["Amigo", "Oscar", "Viking"].sample
   # %w(Amigo Oscar Viking) could use this to refactor
   erb(:index)
 end
 
 get '/named-cat' do
-  @names = params[:name]
   p params
+  @name = params[:name]
+  @age = params[:age]
   erb(:index)
 end
